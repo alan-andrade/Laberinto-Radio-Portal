@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  requester: 
+  presenter: 
+  program: 
+
+two:
+  requester: 
+  presenter: 
+  program: 

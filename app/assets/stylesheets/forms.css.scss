@@ -1,0 +1,48 @@
+@import 'colors.css.scss';
+@import 'effects.css.scss';
+
+.field{
+	margin: 5px 0 15px 0;
+	clear: left;
+	input{
+		font:{
+			family: Inder,Arial;
+			size: 150%;}
+		color: $primer-rojo;
+		border: 1px solid $verde;
+		@include border-radius(5px);
+		@include box-shadow(2px, 2px, 2px, $tercer-gris);
+		padding: 5px 3px;
+		&:focus{
+			border: 1px solid $primer-rojo;
+			background: $segundo-blanco;
+		}	}
+	img{	float:left;	}
+	textarea{	@extend input;	}	}
+	
+.actions{
+	input{
+		font:{
+			family: Inder,Arial;
+			size: 150%;}
+		border: none;
+		padding: 7px;
+		margin: 7px 0;
+		background: $verde;
+		width: 8%;
+		color: $blanco;
+		@include box-shadow(1px,1px,5px,$font-color);
+		&:focus,&:hover{
+			background: $primer-rojo;
+			border:none; font-shadow: 1px 1px 2px $font-color; }}}
+
+.field.with-icon{
+	input{margin-top: 4px;}}
+.field.with-time{
+	display: inline;}
+.field select{
+	@extend input;
+	background: $blanco;
+}
+.field .time{
+	width: 11%;}

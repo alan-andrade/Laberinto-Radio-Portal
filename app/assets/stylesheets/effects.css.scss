@@ -1,0 +1,31 @@
+@mixin border-radius($round){
+	-webkit-border-radius: 	$round;
+	-moz-border-radius: 		$round;
+	border-radius: 					$round;}
+@mixin box-shadow($x,$y,$blur,$color){
+	-webkit-box-shadow: $x	$y	$blur	$color;
+	-moz-box-shadow: 		$x	$y	$blur	$color;
+	box-shadow: 				$x	$y	$blur	$color;
+}
+@mixin filter-gradient($color1,$color2,$horientation){
+	$start:top;
+	$end:bottom;
+	$mstype:0;
+	@if $horientation == 'vertical'{
+		$mstype	:	0;
+		$start 	:	top;
+		$end 		: bottom;
+	} @else {
+		$mstype	:	1;
+		$start	:	bottom;
+		$end		:	top;
+	}	
+	background: $color1;
+	background: -moz-linear-gradient($start, $color1 0%, $color2 100%);
+	background: -webkit-gradient(linear, left $start, left $end, color-stop(0%,$color1), color-stop(100%,$color2));
+	background: -webkit-linear-gradient($start, $color1 0%,$color2 100%);
+	background: -o-linear-gradient(			$start, $color1 0%,$color2 100%);
+	background: -ms-linear-gradient(		$start, $color1 0%,$color2 100%);
+	background: linear-gradient(				$start, $color1 0%,$color2 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='$color1', endColorstr='$color2',GradientType=$mstype );
+}

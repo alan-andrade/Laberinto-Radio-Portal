@@ -1,0 +1,24 @@
+@include 'colors.css.scss';
+@include 'effects.css.scss';
+
+.profile{
+	.clear{ padding-bottom: 20px; }
+	#bio{
+		@include border-radius(5px);
+		padding: 10px;
+		border: 1px solid $primer-gris;
+		@include box-shadow(1px, 1px, 5px, $segundo-gris);
+		@include filter-gradient($segundo-blanco,$blanco,horizontal);}
+	.social-info{
+		img{
+			width: 30px;
+			height: 30px;	}
+		span{position:absolute;}}
+	}
+.profile-pic{
+		float:left;
+		margin-right: 8px;
+		padding: 5px;
+		@include border-radius(5px);
+		border: 1px solid $primer-gris;
+		line-height:0 }

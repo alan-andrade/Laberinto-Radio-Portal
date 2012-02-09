@@ -1,0 +1,70 @@
+@import url(http://fonts.googleapis.com/css?family=Inder);
+$segundo-blanco: 	#f1f1f1; 
+$blanco:					#ffffff;
+$form-bg:					#f8f8f8;
+$verde:						#3f7d3f;
+$font-color:			#333333;
+$primer-rojo:		#9d4e4e;
+
+body{
+	background: $segundo-blanco;
+	margin: 0px auto;
+	padding: 0;
+}
+
+article{
+	width: 960px;
+	margin: 0px auto;
+	padding-top: 60px;
+	header{
+		text-align:center;
+		img{
+			padding-bottom: 60px;}}
+	form{
+		background: $form-bg;
+		width: 47%;
+		margin:0px auto;
+		-webkit-border-radius: 	5px;
+		-moz-border-radius: 		5px;
+		border-radius: 					5px;
+		-webkit-box-shadow: 1px 1px 8px #b5b5b5;
+		-moz-box-shadow: 		1px 1px 8px #b5b5b5;
+		box-shadow: 				1px 1px 8px #b5b5b5;
+		padding: 25px 10px 10px 10px;
+		#form-errors{
+			font: 0.8em Inder, serif-sans;
+			background: $primer-rojo;
+			color: $blanco;
+			padding: 10px;
+			margin-top: -5px;
+			margin-bottom: 10px;
+		}
+		label,input{
+			font: 1em Inder, serif-sans;
+			color: $font-color;	}
+		input{
+			width: 98%;
+			margin:{
+				top: 13px;
+				bottom: 13px;}
+			border: 1px solid $verde;
+			-webkit-border-radius: 	5px;
+			-moz-border-radius: 		5px;
+			border-radius: 					5px;
+			padding: 5px 0px 5px 3px;
+			font-size: 1.3em;
+			&:focus{
+				border: 1px solid $primer-rojo;}}
+	}
+	.actions{
+		text-align: right;
+		input{
+			border: none;
+			background: $verde;
+			width: 25%;
+			color: $blanco;
+			box-shadow: 1px 1px 5px $font-color;
+			&:focus{
+				border:none; font-shadow: 1px 1px 2px $font-color; }}}
+}
+

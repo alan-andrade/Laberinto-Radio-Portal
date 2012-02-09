@@ -1,0 +1,7 @@
+.program
+	.image-with-border
+		=image_tag program.logo.url(:small)
+		%p=link_to program.name, program
+	%p=link_to "Armar Escaleta", "#"
+	%p=link_to "Subir Transmisión", "#"
+	%p=link_to "Editar", edit_program_path(program)

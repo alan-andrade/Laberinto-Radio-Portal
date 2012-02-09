@@ -1,0 +1,46 @@
+- content_for :stylesheets do
+	- stylesheet_link_tag :forms
+
+= form_for @presenter, :html => {:multipart => true} do |f|
+	-if @presenter.errors.any?
+		#error_explanation
+			%h2= pluralize(@presenter.errors.count, "error")
+			prohibited this presenter from being saved:
+		%ul
+			-@presenter.errors.full_messages.each do |msg|
+				%li= msg
+	.field
+		=f.label :avatar
+		%br/
+		- unless f.object.new_record?
+			=image_tag @presenter.avatar.url(:small) , :class=>"profile-pic"
+		=f.file_field :avatar
+	.field
+		=f.label :name, 'Nombre'
+		%br/
+		= f.text_field :name
+	.field.with-icon
+		= f.label :twitter, image_tag('social/twitter.png')
+		= f.text_field :twitter
+	.field.with-icon
+		= f.label :facebook, image_tag('social/facebook.png')
+		= f.text_field :facebook
+	.field
+		= f.label :biography, 'Biografía'
+		%br/
+		= f.text_area :biography, rows: 7
+	.field
+		=f.label :email
+		%br/
+		= f.email_field :email
+	.field
+		=f.label :password, f.object.new_record? ? "Contraseña" : "Cambiar Contraseña"
+		%br/
+		= f.password_field :password
+	.field
+		=f.label :password_confirmation, "Confirmar Contraseña"
+		%br/
+		= f.password_field :password_confirmation
+	.actions
+		= f.submit
+

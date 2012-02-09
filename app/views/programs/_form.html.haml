@@ -1,0 +1,41 @@
+-content_for :stylesheets do
+	-stylesheet_link_tag :forms
+
+= form_for @program do |f|
+	-if @program.errors.any?
+		#error_explanation
+			%h2= "#{pluralize(@program.errors.count, "error")} prohibited this program from being saved:"
+		%ul
+			- @program.errors.full_messages.each do |msg|
+				%li= msg
+	.field
+		=	f.label	:logo,	"Logo"
+		%br/
+		=	f.file_field :logo
+	.field
+		= f.label :name, "Nombre"
+		%br/
+		= f.text_field :name
+	
+	.field
+		%p Días de Transmisión
+		%br/
+		-order_schedules.each_with_index do |sch,index|		
+			=fields_for :schedules, @program.schedules do
+				=check_box_tag "program[form_schedules][day_ids][#{index+1}]", index+1 , sch[:checked]
+				=label_tag "program[form_schedules][day_ids][#{index+1}]", sch[:day]
+	%p 
+		Horario
+		%small (Formato de 24hrs.  12:00,13:00,14:00)
+	.field.with-time
+		= f.label :start_time, "De"
+		= f.time_select :start_time
+	.field.with-time
+		= f.label :end_time, "a"
+		= f.time_select	:end_time
+	.field
+		= f.label :description, "Descripción"
+		%br/
+		= f.text_area :description, rows: 7
+	.actions
+		= f.submit 'Crear'

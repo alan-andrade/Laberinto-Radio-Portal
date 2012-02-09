@@ -1,0 +1,6 @@
+=div_for claim do	
+	%p 
+		%span.requester=claim.requester.name
+		pide permiso para transmitir en 
+		%span.programa=claim.program.name
+		%span.link=link_to "aprovar", program_request_approve_path(claim.program,claim)

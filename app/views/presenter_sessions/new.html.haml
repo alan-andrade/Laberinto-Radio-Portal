@@ -1,0 +1,21 @@
+%article
+	%header
+		%h1= image_tag 'laberintoradio.png'
+
+	=form_for @user_session, url: :presenter_session do |p|
+		-if @user_session.errors.any?
+			#form-errors
+				%p=flash[:notice]
+				%ul
+					-@user_session.errors.full_messages.each do |msg|
+						%li= msg
+		.field
+			=p.label :email, 'Correo electrónico'
+			%br/
+			=p.email_field :email
+		.field
+			=p.label :password, 'Contraseña'
+			%br/
+			=p.password_field :password
+		.actions
+			=p.submit "Entrar"

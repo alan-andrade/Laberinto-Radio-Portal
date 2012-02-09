@@ -1,0 +1,10 @@
+.program
+	.image-with-border
+		=image_tag other_program.logo.url(:small)
+		%p=link_to other_program.name, other_program
+	
+	-if other_program.requests.empty?
+		%div{:id=>"request_#{other_program.id}"}
+			=button_to "Enviar petición", program_requests_url(other_program) , :remote=>true
+	-else
+		Solicitud Enviada

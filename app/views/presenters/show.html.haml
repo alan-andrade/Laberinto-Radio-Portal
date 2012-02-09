@@ -1,0 +1,27 @@
+.container_12
+	%header.grid_12
+		%h1 Perfil
+		= link_to 'Editar', edit_presenter_path(@presenter), class: "with-header"
+
+	%article.grid_12.profile.main
+		#notice
+			=notice
+		
+		.profile-pic=image_tag @presenter.avatar.url(:small)
+
+		%p
+			= @presenter.name
+
+		%p.social-info
+			= image_tag 'social/twitter.png'
+			%span= @presenter.twitter	
+
+		%p.social-info
+			= image_tag 'social/facebook.png', class: 'social-icon'
+			%span= @presenter.facebook
+		.clear
+
+		%section
+			%header
+				%h2 Biografia
+			%p#bio= @presenter.biography

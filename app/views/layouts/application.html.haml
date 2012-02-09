@@ -1,0 +1,23 @@
+!!! 5
+%html
+	%head
+		%meta{charset: 'utf8'}
+		%title PortalDeLocutores
+		= stylesheet_link_tag '960/reset.css'
+		= stylesheet_link_tag '960/960.css'
+		= stylesheet_link_tag	:application
+		= javascript_include_tag :jquery, :jquery_ujs, :application
+		= yield :stylesheets
+		= csrf_meta_tags
+	%body
+		%header.container_12
+			.grid_12#general-navigation
+				%nav
+					%ul#radio-nav
+						%li= link_to "Lobby",	lobby_url
+						%li= link_to "Programas", programs_url
+				%nav
+					%ul#user-nav
+						%li= link_to 'Perfil', @current_user
+						%li= link_to 'Salir', logout_url
+		= yield

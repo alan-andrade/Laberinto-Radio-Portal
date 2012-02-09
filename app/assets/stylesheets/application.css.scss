@@ -1,0 +1,66 @@
+@import 'colors.css.scss';
+@import 'effects.css.scss';
+@import url(http://fonts.googleapis.com/css?family=Inder);
+@font-face {
+    font-family: 'BebasNeueRegular';
+    src: url('fonts/BebasNeue-webfont.eot');
+    src: url('fonts/BebasNeue-webfont.eot?#iefix') format('embedded-opentype'),
+          url('fonts/BebasNeue-webfont.woff') format('woff'),
+          url('fonts/BebasNeue-webfont.ttf') format('truetype'),
+          url('fonts/BebasNeue-webfont.svg#BebasNeueRegular') format('svg');
+    font-weight: normal;
+    font-style: normal;}
+    
+html{
+	background: $blanco; }
+
+body{
+	font-family: Inder, sans-serif;
+	color: $font-color;
+	margin-bottom: 30px;	}
+
+h1,h2,h3,h4,h5{	font-family: 'BebasNeueRegular', sans-serif; line-height: 0.8; font-weight: normal;}
+h1{	margin-bottom: 3px;	border-bottom: 1px solid $tercer-gris;	}
+
+// http://modularscale.com/scale/?px1=24&px2=24&ra1=1.618&ra2=0
+h1{font-size: 2.6em; margin: 0.382em 0;}
+h2{font-size:	1.6em; margin: 0.382em 0;}
+p{ font-size:1em;		 line-height:1.618em;}
+small{font-size: 0.62em;}
+a{ color: $new-link; &:visited{color: $old-link;}}
+
+#general-navigation{}
+
+.horizontal-list{
+	li{	display:inline;	}}
+
+#radio-nav{
+	@extend .horizontal-list;
+	margin			:	15px 0 0 0;
+	border: 5px solid $primer-gris;
+	text-align	: center;
+	font-family	: BebasNeueRegular, sans-serif;
+	font-size		: 2.6em;
+	li{
+		padding: 0 1em;
+		a{
+			color: $font-color;
+			text-decoration: none;
+			&:hover{
+				cursor	:	pointer;
+				color: $primer-gris;}}}}
+
+#user-nav{
+	text-align: right;
+	margin:5px;
+	@extend .horizontal-list;}
+
+//Class for the main article
+article.main{
+	min-height: 400px;
+}
+
+// To get any text at the extreme right of a h1.
+.with-header{	
+	float: right;
+	margin-top: -2.5em;}

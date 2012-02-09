@@ -1,0 +1,20 @@
+-content_for :stylesheets do
+	=stylesheet_link_tag :programs
+
+.container_12
+	%article.grid_12
+		%header
+			%h1 Mis Programas
+			- if @myprograms.empty?
+				%p No manejas ningun programa.
+				%br/
+				.like-button= link_to "Crea tu Programa", new_program_path
+			- else
+				= render @myprograms					
+				.clear
+				= link_to "Arma otro Programa", new_program_path
+	%article.grid_12
+		%header
+			%h1 Otros Programas
+		=render :partial=>"other_program", :collection => @otherprograms
+		.clear				

@@ -1,0 +1,10 @@
+!!! 5
+%html
+	%head
+		%meta{charset: 'utf8'}
+		%title Login al Portal de Locutores
+		= stylesheet_link_tag "960/reset.css"
+		= stylesheet_link_tag :presenter_sessions
+		= csrf_meta_tags
+	%body
+		= yield

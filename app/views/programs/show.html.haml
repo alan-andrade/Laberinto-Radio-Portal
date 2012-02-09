@@ -1,0 +1,22 @@
+-content_for :stylesheets do
+	=stylesheet_link_tag :programs
+	
+.container_12
+	%article.grid_12
+		%header
+			%hgroup
+				%h1=@program.name
+				- if @canedit
+					=link_to "Editar", edit_program_path(@program), class: 'with-header'
+				%h2.small="#{@program.days.map(&:day).join(", ")} De #{@program.start_time.to_formatted_s(:time)} a #{@program.end_time.to_formatted_s(:time)}"
+				
+		
+		=image_tag @program.logo.url(:large), class: :program_logo
+		- for presenter in @program.presenters
+			.image-with-border
+				=image_tag presenter.avatar.url(:small)
+				%p=link_to presenter.name.split[0..1].join(" "), presenter
+		.clear
+		%p.description=@program.description
+		%h2 Emisiones Anteriores
+	
