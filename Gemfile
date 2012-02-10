@@ -12,6 +12,7 @@ gem 'haml'
 gem 'authlogic'
 gem 'paperclip'
 gem 'haml-rails'
+gem 'activerecord-mysql-adapter'
 
 # Gems used only for assets and not required
 # in production environments by default.
