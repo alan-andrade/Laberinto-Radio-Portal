@@ -15,6 +15,7 @@ gem 'haml'
 gem 'authlogic'
 gem 'paperclip'
 gem 'haml-rails'
+gem 'jquery-rails'
 
 # Gems used only for assets and not required
 # in production environments by default.
@@ -23,8 +24,14 @@ group :assets do
   gem 'coffee-rails', '~> 3.1.1'
   gem 'uglifier', '>= 1.0.3'
 end
+group :test do
+  # Pretty printed test output
+  # gem 'turn', '0.8.2', :require => false  
+  gem 'cucumber-rails'
+  gem 'database_cleaner'
+  gem 'factory_girl'
+end
 
-gem 'jquery-rails'
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
@@ -38,11 +45,4 @@ gem 'jquery-rails'
 # To use debugger
 # gem 'ruby-debug19', :require => 'ruby-debug'
 
-group :test do
-  # Pretty printed test output
-  # gem 'turn', '0.8.2', :require => false
-  
-  gem 'cucumber-rails'
-  gem 'database_cleaner'
-end
 
