@@ -2,6 +2,7 @@
 
 body{
 	overflow: hidden;
+	font-family: Arial, sans-serif;
 }
 
 a:visited{
@@ -18,4 +19,13 @@ a:visited{
 
 .button{
 	cursor:	pointer;
+}
+
+#bottom-bar{
+	position: absolute;
+	width: 100%;
+	padding: 5px 0;
+	bottom: 0;
+	background-color: #333;
+	text-align: center;
 }
