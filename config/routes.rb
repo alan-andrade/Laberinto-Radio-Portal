@@ -2,7 +2,6 @@ PortalDeLocutores::Application.routes.draw do
 	constraints :subdomain=>'broadcaster' do
 		match	'login'		=>	'presenter_sessions#new'
 		match 'logout' 	=> 	'presenter_sessions#destroy'
-		root to: 'login'
 		match	'lobby'		=>	'lobby#index', :contoller=>'lobby'
 		resources :programs do
 			resources	:requests,	:only=>[:create,:destroy] do
