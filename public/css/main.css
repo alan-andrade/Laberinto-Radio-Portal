@@ -2,7 +2,7 @@
 
 body{	overflow: hidden;	font-family: Arial, sans-serif; }
 
-a{	color: #878e8e;}
+a{	color: #878e8e; text-decoration:none }
 a:hover{ color: #fff; }
 a:visited{	text-decoration: none;}
 
