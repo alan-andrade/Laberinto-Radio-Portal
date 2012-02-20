@@ -27,7 +27,7 @@
 		  window.addEventListener('SVGLoad', function() {
 		    console.log('ready');
 		    svg  = $($('object').get(0).contentDocument)
-		    $('svg').on('click','#programas',function(e){console.log(e)})
+		    svg.on('click','#programas',function(e){console.log(e);$.colorbox({href: 'programas.png'})})
 		  }, false);
 		});
 		// ]]>
