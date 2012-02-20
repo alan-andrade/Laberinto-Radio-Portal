@@ -1,14 +1,10 @@
 @import 'reset.css';
 
-body{
-	overflow: hidden;
-	font-family: Arial, sans-serif;
-}
+body{	overflow: hidden;	font-family: Arial, sans-serif; }
 
-a:visited{
-	color: #878e8e;
-	background: blue;
-}
+a{	color: #878e8e;}
+a:hover{ color: #fff; }
+a:visited{	text-decoration: none;}
 
 #mainSvg{
 	position:absolute;
