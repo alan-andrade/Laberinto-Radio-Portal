@@ -5,17 +5,31 @@
 		<title>Laberinto Radio</title>
 		<script src="svg-src/svg.js" data-path="svg-src"></script>
 		<link href="css/main.css"	rel="stylesheet" type="text/css" />
+		<link href="css/colorbox.css"	rel="stylesheet" type="text/css" />
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
+		<script src="js/jquery.colorbox-min.js" type="text/javascript"></script>
+		
 	</head>
 	<body>
 		<div id="mainSvg">
 			<!--[if !IE]>-->
-				<object data="main.svg" type="image/svg+xml" height="100%" id="mainLaberinto"> <!--<![endif]-->
+			<object data="main.svg" type="image/svg+xml" height="100%"> <!--<![endif]-->
 			<!--[if lt IE 9]>
-				<object src="main.svg" classid="image/svg+xml" height="100%" id="mainLaberinto"> <![endif]-->
+				<object src="main.svg" classid="image/svg+xml" height="100%"> <![endif]-->
 			<!--[if gte IE 9]>
-				<object data="main.svg" type="image/svg+xml" height="100%" id="mainLaberinto"> <![endif]-->
+				<object data="main.svg" type="image/svg+xml" height="100%"> <![endif]-->
 			<h1>Necesitas un navegador mas nuevo.</h1>
 			</object>
 		</div>
+		<script type="text/javascript" language="javascript">
+		// <![CDATA[
+		$(document).ready(function() {
+		  window.addEventListener('SVGLoad', function() {
+		    console.log('ready');
+		    $('body').on('click',function(e){console.log(e)})
+		  }, false);
+		});
+		// ]]>
+		</script>
 	</body>
 </html>

@@ -4,6 +4,11 @@ body{
 	overflow: hidden;
 }
 
+a:visited{
+	color: #878e8e;
+	background: blue;
+}
+
 #mainSvg{
 	position:absolute;
 	height: 95%;
