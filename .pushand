@@ -1,2 +1,2 @@
 #! /bin/bash
-phd $0 portalDeLocutores portalDeLocutores
+phd $0 portalDeLocutores *.laberintoradio.net
