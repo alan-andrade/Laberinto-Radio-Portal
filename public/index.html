@@ -26,7 +26,8 @@
 		$(document).ready(function() {
 		  window.addEventListener('SVGLoad', function() {
 		    console.log('ready');
-		    $('body').on('click',function(e){console.log(e)})
+		    svg  = $($('object').get(0).contentDocument)
+		    $('svg').on('click','#programas',function(e){console.log(e)})
 		  }, false);
 		});
 		// ]]>
