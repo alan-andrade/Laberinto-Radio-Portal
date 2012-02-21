@@ -3,7 +3,7 @@
 @import '960/text.css';
 @import url(http://fonts.googleapis.com/css?family=Inder);
 
-body{	font-family: Inder, Arial, sans-serif; }
+body{	font-family: Inder, Arial, sans-serif; padding-top: 15px; }
 .withImage a{display: inline;}
 .withImage h1,h2{display: inline;}
 h1,h2{ font-weight: normal; }
