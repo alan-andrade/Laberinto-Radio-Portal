@@ -1,0 +1,35 @@
+@import 'reset.css';
+@import url(http://fonts.googleapis.com/css?family=Terminal+Dosis);
+@import url(http://fonts.googleapis.com/css?family=Inder);
+
+body{	overflow: hidden;	font-family: Arial, sans-serif; }
+
+a{	color: #1122cc; text-decoration:none }
+a:hover{ color: #6611cc; }
+a:visited{	text-decoration: none;}
+
+#mainSvg{
+	position:absolute;
+	height: 95%;
+	width: 95%;
+	margin-left: 27%;
+}
+
+.button{
+	cursor:	pointer;
+}
+
+#admin-nav{
+	font-size: 80%;
+	position: absolute;
+	width: 99%;
+	padding: 5px 5px;
+	top: 0;
+	text-align: right;
+}
+
+#notice{
+	font-family: 'Terminal Dosis', sans-serif;
+	font-size: 130%;
+	padding: 15px;
+}
