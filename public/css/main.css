@@ -1,4 +1,5 @@
 @import 'reset.css';
+@import url(http://fonts.googleapis.com/css?family=Terminal+Dosis);
 
 body{	overflow: hidden;	font-family: Arial, sans-serif; }
 
@@ -24,4 +25,10 @@ a:visited{	text-decoration: none;}
 	bottom: 0;
 	background-color: #333;
 	text-align: center;
+}
+
+#notice{
+	font-family: 'Terminal Dosis', sans-serif;
+	font-size: 130%;
+	padding: 15px;
 }
