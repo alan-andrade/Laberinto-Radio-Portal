@@ -49,6 +49,16 @@
 		<script type="text/javascript" language="javascript">
 			$(document).ready(function() {
 				window.addEventListener('SVGLoad', function() {
+					$('#menu g').hover(function(e){
+						if($.inArray(e.currentTarget.id,['chat', 'contenido']) == -1)
+							$(e.currentTarget).children('path').attr('fill','#333')
+					}, function(e){
+						console.log(e.currentTarget.id)
+						if($.inArray(e.currentTarget.id,['chat', 'contenido']) == -1)
+							$(e.currentTarget).children('path').attr('fill','#878e8e')});
+					
+					$('#chat path, #contenido path').attr('fill','#D0DADA');
+					
 				  $('#programas').click(function(){
 				  	$.colorbox({href: 'programas.png', photo: true, maxHeight: '100%'})
 				  })

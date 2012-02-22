@@ -15,9 +15,7 @@ a:visited{	text-decoration: none;}
 	margin-left: 27%;
 }
 
-.button{
-	cursor:	pointer;
-}
+.button{	cursor:	pointer; }
 
 #admin-nav{
 	font-size: 80%;
@@ -32,4 +30,8 @@ a:visited{	text-decoration: none;}
 	font-family: 'Terminal Dosis', sans-serif;
 	font-size: 130%;
 	padding: 15px;
+}
+
+.hoverSvg{
+	fill: #333;
 }
