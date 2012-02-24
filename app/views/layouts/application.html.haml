@@ -3,10 +3,8 @@
 	%head
 		%meta{charset: 'utf8'}
 		%title PortalDeLocutores
-		= stylesheet_link_tag '960/reset.css'
-		= stylesheet_link_tag '960/960.css'
 		= stylesheet_link_tag	:application
-		= javascript_include_tag :jquery, :jquery_ujs, :application
+		= javascript_include_tag 'all'
 		= yield :stylesheets
 		= csrf_meta_tags
 	%body
