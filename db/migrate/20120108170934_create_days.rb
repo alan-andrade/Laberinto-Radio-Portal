@@ -4,6 +4,5 @@ class CreateDays < ActiveRecord::Migration
     create_table :days do |t|
       t.string :day, null: false 
     end
-    ["Lunes","Martes","Miércoles","Jueves","Viernes","Sábado","Domingo"].each {|day|	Day.create(day: day) }
   end
 end

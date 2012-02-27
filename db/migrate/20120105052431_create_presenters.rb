@@ -25,6 +25,5 @@ class CreatePresenters < ActiveRecord::Migration
 
       t.timestamps
     end
-	  Presenter.create(name: "Alan Andrade Cestelos", email: "alan.andradec@gmail.com",  password: "gallo", password_confirmation: "gallo", admin: true)
   end
 end
