@@ -4,8 +4,7 @@
 		%meta{charset: 'utf8'}
 		%title PortalDeLocutores
 		= stylesheet_link_tag	:application
-		= javascript_include_tag 'all'
-		= yield :stylesheets
+		= javascript_include_tag :application
 		= csrf_meta_tags
 	%body
 		%header.container_12
