@@ -1,6 +1,6 @@
 /*
 *= require '960/reset'
 *= require '960/960'
+*= require '960/text'
 *= require base
-*= require_tree .
 */
