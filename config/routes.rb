@@ -1,14 +1,12 @@
-PortalDeLocutores::Application.routes.draw do
-	constraints :subdomain=>'broadcaster' do
-		match	'login'		=>	'presenter_sessions#new'
-		match 'logout' 	=> 	'presenter_sessions#destroy'
-		match	'lobby'		=>	'lobby#index', :contoller=>'lobby'
-		resources :programs do
-			resources	:requests,	:only=>[:create,:destroy] do
-				match	'approve', :action=>'approve'
-			end
+PortalDeLocutores::Application.routes.draw do	
+	match 'login'		=>	'presenter_sessions#new'
+	match 'logout' 	=> 	'presenter_sessions#destroy'
+	match 'lobby'		=>	'lobby#index', :contoller=>'lobby'
+	resources :programs do
+		resources	:requests,	:only=>[:create,:destroy] do
+			match	'approve', :action=>'approve'
 		end
-		resources :presenters
-		resource :presenter_session
 	end
+	resources :presenters
+	resource :presenter_session
 end
