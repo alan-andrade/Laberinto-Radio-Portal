@@ -7,10 +7,11 @@
 		%h1 Bienvenido a Laberinto Radio
 		%p="Querid@ #{@user.name}:"
 		%p Tu cuenta esta lista para que utilices el portal para locutores. Puedes ingresar con la siguiente credencial.
-		%p
-		%i email:
+		%pi
+			email:
 			=@user.email
-		%i password
+		%pi 
+			password
 			=@user.password
 		%p Ingresa en
 			=link_to('http://www.laberintoradio.net')
