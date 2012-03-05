@@ -7,4 +7,4 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 Presenter.create(name: "Alan Andrade Cestelos", email: "alan.andradec@gmail.com",  password: "gallo", password_confirmation: "gallo", admin: true)
-["Lunes","Martes","Miércoles","Jueves","Viernes","Sábado","Domingo"].each {|day|	Day.create(day: day) }
+["Lunes","Martes","Miercoles","Jueves","Viernes","Sabado","Domingo"].each {|day|	Day.create(day: day) }
