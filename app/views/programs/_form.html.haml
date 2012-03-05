@@ -1,3 +1,4 @@
+=# encoding: utf-8
 = form_for @program do |f|
 	-if @program.errors.any?
 		#error_explanation
@@ -19,8 +20,8 @@
 		%br/
 		-order_schedules.each_with_index do |sch,index|		
 			=fields_for :schedules, @program.schedules do
-				=check_box_tag "program[form_schedules][day_ids][#{index+1}].dup.force_encoding(Encoding::UTF_8)", index+1 , sch[:checked]
-				=label_tag "program[form_schedules][day_ids][#{index+1}].dup.force_encoding(Encoding::UTF_8)", sch[:day]
+				=check_box_tag "program[form_schedules][day_ids][#{index+1}]", index+1 , sch[:checked]
+				=label_tag "program[form_schedules][day_ids][#{index+1}]", sch[:day]
 	%p 
 		Horario
 		%small (Formato de 24hrs.  12:00,13:00,14:00)
