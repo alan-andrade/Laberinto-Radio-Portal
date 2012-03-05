@@ -38,6 +38,7 @@ class PresentersController < ApplicationController
 
     respond_to do |format|
       if @presenter.save
+        PresentersMailer.invitation_email(@presenter).deliver
         format.html { redirect_to @presenter, notice: 'Presenter was successfully created.' }
         format.json { render json: @presenter, status: :created, location: @presenter }
       else
