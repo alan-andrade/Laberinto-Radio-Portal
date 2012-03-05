@@ -4,7 +4,8 @@
 			%h1 Lobby
 		
 		%h2 Admin
-		=link_to 'Crea usuario', new_presenter_url
+		- if @current_user.admin?
+			=link_to 'Crea usuario', new_presenter_url
 		%h2 Permisos
 		%p
 			=@claims.count
