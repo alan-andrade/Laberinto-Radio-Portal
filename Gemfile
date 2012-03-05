@@ -5,7 +5,9 @@ gem 'rails', '3.1.3'
 # Bundle edge Rails instead:
 # gem 'rails',     :git => 'git://github.com/rails/rails.git'
 group :production do 
-  gem 'mysql'
+  # mysql gem didn't support the utf8 encoding.
+  # gem 'mysql'
+  gem "mysql2", "~> 0.2.7"
 end
 
 gem 'execjs'
