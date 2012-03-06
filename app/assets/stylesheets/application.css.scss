@@ -1,5 +1,13 @@
-@import 'colors.css.scss';
+/*
+ *= require '960/reset'
+ *= require '960/960'
+ *= require '960/text'
+ *= require_self
+ *= require_tree './main'
+*/
+
 @import url(http://fonts.googleapis.com/css?family=Inder);
+@import 'main/colors.css.scss';
 @font-face {
     font-family: 'BebasNeueRegular';
     src: url('fonts/BebasNeue-webfont.eot');
