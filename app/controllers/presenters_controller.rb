@@ -1,3 +1,4 @@
+# encoding: utf-8
 class PresentersController < ApplicationController
 	before_filter :require_user
 	before_filter	:need_admin, :only	=> [:new,:destroy]
