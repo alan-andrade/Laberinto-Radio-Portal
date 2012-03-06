@@ -14,6 +14,8 @@ class PresenterSessionsController < ApplicationController
       logger.info "passed the user session save."
       redirect_to lobby_url
     else    	
+      logger.info @user_session.errors
+      logger.info @user_session.valid?
       render action: :new
     end
   end
