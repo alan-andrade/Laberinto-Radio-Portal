@@ -1,8 +1,7 @@
 %article
 	%header
 		%h1= image_tag 'laberintoradio.png'
-
-	=form_for @user_session do |p|
+	=form_for @user_session, :url=>presenter_session_path do |p|
 		-if @user_session.errors.any?
 			#form-errors
 				%p=flash[:notice]
