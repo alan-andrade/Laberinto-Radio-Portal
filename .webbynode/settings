@@ -1,2 +1,5 @@
 engine=rails3
 dns_alias='www.laberintoradio.net'
+database_name=portalDeLocutores_production
+database_user=portalDeLocutores
+database_password=laberintoG@llo
