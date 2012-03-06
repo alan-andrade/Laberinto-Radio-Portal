@@ -6,7 +6,7 @@ gem 'rails', '3.1.3'
 # gem 'rails',     :git => 'git://github.com/rails/rails.git'
 group :production do 
   # mysql gem didn't support the utf8 encoding.
-  #gem 'mysql'
+  gem 'mysql'
   # gem "mysql2", "~> 0.2.7"
   # gem 'pg'
 end
