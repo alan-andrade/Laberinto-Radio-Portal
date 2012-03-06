@@ -1,6 +1,8 @@
 PortalDeLocutores::Application.routes.draw do
-	match 'login'	=>	'presenter_sessions#new'
-	match 'logout' 	=> 	'presenter_sessions#destroy'
+	resources :presenter_sessions do
+		match 'login'	,	action: :new
+		match 'logout' 	,	actions: :destroy
+	end
 	match 'lobby'	=>	'lobby#index', :contoller=>'lobby'
 	resources :programs do
 		resources	:requests,	:only=>[:create,:destroy] do
