@@ -9,4 +9,5 @@ PortalDeLocutores::Application.routes.draw do
 	end
 	resources :presenters
 	resource :presenter_session
+	
 end
