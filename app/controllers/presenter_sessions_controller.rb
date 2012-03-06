@@ -8,7 +8,7 @@ class PresenterSessionsController < ApplicationController
 
   def create
     @user_session = PresenterSession.new(params[:presenter_session])
-    logger.debug @user_session
+    p @user_session
     if @user_session.save
       logger.debug "passed the user session save."
       redirect_to lobby_url
