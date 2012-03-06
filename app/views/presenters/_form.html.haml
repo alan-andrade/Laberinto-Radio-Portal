@@ -1,6 +1,3 @@
-- content_for :stylesheets do
-	- stylesheet_link_tag :forms
-
 = form_for @presenter, :html => {:multipart => true} do |f|
 	-if @presenter.errors.any?
 		#error_explanation
