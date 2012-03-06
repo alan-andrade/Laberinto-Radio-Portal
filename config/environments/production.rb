@@ -57,6 +57,7 @@ PortalDeLocutores::Application.configure do
     :authentication       => 'plain',
     :enable_starttls_auto => true  }
 
+
   # Enable threaded mode
   # config.threadsafe!
 
