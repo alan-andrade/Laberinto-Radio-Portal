@@ -1,4 +1,3 @@
-# encoding: utf-8
 class ProgramsController < ApplicationController
 	before_filter	:require_user
 
