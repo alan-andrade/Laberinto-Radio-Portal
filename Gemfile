@@ -8,7 +8,7 @@ group :production do
   # mysql gem didn't support the utf8 encoding.
   #gem 'mysql'
   # gem "mysql2", "~> 0.2.7"
-  gem 'pg'
+  # gem 'pg'
 end
 
 gem 'execjs'
