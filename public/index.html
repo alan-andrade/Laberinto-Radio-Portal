@@ -75,6 +75,7 @@
 
 				// events functions definitions.
 				function showBox(){
+					$.cookies.set('hidden','0');
 					$('.hidden')
 						.animate({bottom: '0px'},1500,'swing')
 						.removeClass('hidden')
@@ -83,23 +84,15 @@
 				function hideBox(){
 					$('.shown')
 						.animate({bottom: '-63px'},1000,'swing',function(){
-							$(this).addClass('hidden')
+							$(this).addClass('hidden');
+							$.cookies.set('hidden','1');
 						})
-						.removeClass('shown')		
+						.removeClass('shown');
 				}
 				// events bindings
-				$('.shown').click(function(){
-					hideBox()
-					$.cookies.set('hidden','1');
-				});
-				$('.hidden').click(function(){
-					showBox();
-					$.cookies.set('hidden','0');
-				});
-				$('#bottom-notice button').click(function(){
-					hideBox();
-					$.cookies.set('hidden','1');
-				});
+				$('.shown').click(hideBox);
+				$('.hidden').click(showBox);
+				$('#bottom-notice button').click(hideBox);
 
 				// show hidden box
 				if ($.cookies.get('hidden') == null || $.cookies.get('hidden') == 0) {
