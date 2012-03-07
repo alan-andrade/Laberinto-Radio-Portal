@@ -10,7 +10,7 @@
 		<link href="css/colorbox.css"	rel="stylesheet" type="text/css" />
 		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
 		<script src="js/jquery.colorbox-min.js" type="text/javascript"></script>
-		<script src="js/jquery.cookie.js" type="text/javascript"></script>
+		<script src="js/jquery.cookies.2.2.0.min.js" type="text/javascript"></script>
 		
 	</head>
 	<body>
@@ -74,14 +74,14 @@
 
 				// events functions definitions.
 				function showBox(){
-					$.cookie('hidden',null);
+					$.cookies.set('hidden',0);
 					$('.hidden')
 						.animate({bottom: '0px'},1500,'swing')
 						.removeClass('hidden')
 						.addClass('shown')
 				}
 				function hideBox(){
-					$.cookie('hidden','1');
+					$.cookies.set('hidden',1);
 					$('.shown')
 						.animate({bottom: '-63px'},1000,'swing',function(){
 							$(this).addClass('hidden')
@@ -94,7 +94,7 @@
 				$('#bottom-notice button').click(hideBox);
 
 				// show hidden box
-				if ($.cookie('hidden') == null) {
+				if ($.cookie.get('hidden') == null || $.cookie.get('hidden') == 0) {
 					$('.hidden').trigger('click');					
 				};
 
