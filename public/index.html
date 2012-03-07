@@ -94,7 +94,7 @@
 				$('#bottom-notice button').click(hideBox);
 
 				// show hidden box
-				if ($.cookie.get('hidden') == null || $.cookie.get('hidden') == 0) {
+				if ($.cookies.get('hidden') == null || $.cookies.get('hidden') == 0) {
 					$('.hidden').trigger('click');					
 				};
 
