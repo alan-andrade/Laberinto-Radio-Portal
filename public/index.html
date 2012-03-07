@@ -74,7 +74,7 @@
 
 				// events functions definitions.
 				function showBox(){
-					$.cookie('hidden','0');
+					$.cookie('hidden',null);
 					$('.hidden')
 						.animate({bottom: '0px'},1500,'swing')
 						.removeClass('hidden')
@@ -94,7 +94,7 @@
 				$('#bottom-notice button').click(hideBox);
 
 				// show hidden box
-				if ($.cookie('hidden') == '0' || $.cookie('hidden') == null) {
+				if ($.cookie('hidden') == null) {
 					$('.hidden').trigger('click');					
 				};
 
