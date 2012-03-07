@@ -49,9 +49,7 @@
 			<a href="buscamos.html" class="button colorbox">Info</a>  <button class="button">Ocultar</button>
 		</div>
 		<script type="text/javascript" language="javascript">
-			cookieOptions	=	{ path:'/',expiresAt: new Date(2012,9,9) };
-			$.cookies.setOptions(cookieOptions);
-
+			$.cookies.setOptions({ path:'/',expiresAt: new Date(2012,9,9) });
 			$(document).ready(function() {
 				window.addEventListener('SVGLoad', function() {
 					$('#menu g').hover(function(e){
@@ -77,14 +75,12 @@
 
 				// events functions definitions.
 				function showBox(){
-					$.cookies.set('hidden','0');
 					$('.hidden')
 						.animate({bottom: '0px'},1500,'swing')
 						.removeClass('hidden')
 						.addClass('shown')
 				}
 				function hideBox(){
-					$.cookies.set('hidden','1');
 					$('.shown')
 						.animate({bottom: '-63px'},1000,'swing',function(){
 							$(this).addClass('hidden')
@@ -92,9 +88,18 @@
 						.removeClass('shown')		
 				}
 				// events bindings
-				$('.shown').click(hideBox);
-				$('.hidden').click(showBox);
-				$('#bottom-notice button').click(hideBox);
+				$('.shown').click(function(){
+					hideBox()
+					$.cookies.set('hidden','1');
+				});
+				$('.hidden').click(function(){
+					showBox();
+					$.cookies.set('hidden','0');
+				});
+				$('#bottom-notice button').click(function(){
+					hideBox();
+					$.cookies.set('hidden','1');
+				});
 
 				// show hidden box
 				if ($.cookies.get('hidden') == null || $.cookies.get('hidden') == 0) {
