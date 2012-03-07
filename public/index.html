@@ -78,7 +78,7 @@
 				// events functions definitions.
 				function showBox(){
 					$.cookies.del('hidden');
-					$.cookies.set('hidden',0);
+					$.cookies.set('hidden','0');
 					$('.hidden')
 						.animate({bottom: '0px'},1500,'swing')
 						.removeClass('hidden')
@@ -86,7 +86,7 @@
 				}
 				function hideBox(){
 					$.cookies.del('hidden');
-					$.cookies.set('hidden',1);
+					$.cookies.set('hidden','1');
 					$('.shown')
 						.animate({bottom: '-63px'},1000,'swing',function(){
 							$(this).addClass('hidden')
