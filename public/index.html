@@ -10,6 +10,7 @@
 		<link href="css/colorbox.css"	rel="stylesheet" type="text/css" />
 		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
 		<script src="js/jquery.colorbox-min.js" type="text/javascript"></script>
+		<script src="js/jquery.cookie.js" type="text/javascript"></script>
 		
 	</head>
 	<body>
@@ -41,10 +42,11 @@
 			</script>
 		</div>
 		<div id="admin-nav">
-			<a href="http://laberintoradio.net/lobby" title="Portal de Locutores">Log In</a>
+			<a href="lobby" title="Portal de Locutores">Log In</a>
 		</div>
-		<div id="notice">
-			<p>En construcción, pero nos puedes escuchar.</p>
+		<div id="bottom-notice" class="hidden">
+			<p>Buscamos colaboradores</p>
+			<a href="buscamos.html" class="button colorbox">Info</a>  <button class="button">Ocultar</button>
 		</div>
 		<script type="text/javascript" language="javascript">
 			$(document).ready(function() {
@@ -63,12 +65,40 @@
 				  	$.colorbox({href: 'programas.png', photo: true, maxHeight: '100%'})
 				  })
 				  $('#contacto').click(function(){
-				  	$.colorbox({href: 'contacto.html', width: '90%', height: '98%', iframe: true})
+				  	$.colorbox({href: 'contacto.html',width: '90%', height: '98%', iframe: true})
 				  })
 				  $('#acerca').click(function(){
-				  	$.colorbox({href: 'acercade.html', width: '90%', height: '98%', iframe:true})
+				  	$.colorbox({href: 'acercade.html',width: '90%', height: '98%', iframe:true})
 				  })
 				}, false);
+
+				// events functions definitions.
+				function showBox(){
+					$.cookie('hidden','0');
+					$('.hidden')
+						.animate({bottom: '0px'},1500,'swing')
+						.removeClass('hidden')
+						.addClass('shown')
+				}
+				function hideBox(){
+					$.cookie('hidden','1');
+					$('.shown')
+						.animate({bottom: '-63px'},1000,'swing',function(){
+							$(this).addClass('hidden')
+						})
+						.removeClass('shown')		
+				}
+				// events bindings
+				$('.shown').click(hideBox);
+				$('.hidden').click(showBox);
+				$('#bottom-notice button').click(hideBox);
+
+				// show hidden box
+				if ($.cookie('hidden') == '0' || $.cookie('hidden') == null) {
+					$('.hidden').trigger('click');					
+				};
+
+				$('.colorbox').colorbox({width: '90%', height: '98%'});
 			});
 		</script>
 	</body>

@@ -5,8 +5,12 @@
 
 body{	font-family: Inder, Arial, sans-serif; }
 .withImage { padding-top: 15px; }
-.withImage a{display: inline;}
-.withImage h1,h2{display: inline;}
+.withImage h1,h2,a{display: inline;}
+.withImage img{float:left; width: 45px; padding-right: 5px;}
 h1,h2{ font-weight: normal; }
 h1{ font-size: 300%; }
 h2{ font-size: 230%; }
+
+#imagesPad img{
+	padding: 10px;
+}
