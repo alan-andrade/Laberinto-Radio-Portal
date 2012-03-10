@@ -41,6 +41,10 @@ a{ color: $new-link; &:visited{color: $old-link;}}
 .horizontal-list{
 	li{	display:inline;	}}
 
+.broken{color: gray; text-decoration: line-through;}
+.broken a{color:gray;text-decoration: line-through;}
+.broken a:visited{color:gray;text-decoration: line-through;}
+
 #radio-nav{
 	@extend .horizontal-list;
 	margin			:	15px 0 0 0;
