@@ -1,6 +1,8 @@
 PortalDeLocutores::Application.routes.draw do
-	match 'login'	=>	'presenter_sessions#new'
-	match 'logout' 	=> 	'presenter_sessions#destroy'
+	resources :user_sessions
+	match 'login'	=>	'user_sessions#new'
+	match 'logout' 	=> 	'user_sessions#destroy'
+	resources :broadcasters
 
 	#match 'lobby'	=>	'lobby#index', :contoller=>'lobby'
 	
@@ -13,7 +15,5 @@ PortalDeLocutores::Application.routes.draw do
 			match	'approve', :action=>'approve'
 		end
 	end
-	resources :presenters
-	resource :presenter_session
 	
 end

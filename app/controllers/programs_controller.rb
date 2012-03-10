@@ -3,18 +3,18 @@ class ProgramsController < ApplicationController
 	before_filter	:require_user
 
   def index
-  	@programs				=	Program.includes(:presenters).all
+  	@programs				=	Program.includes(:broadcasters).all
     @myprograms 		= @current_user.programs
     @otherprograms	=	@programs - @myprograms
 
     respond_to do |format|
       format.html # index.html.erb
-      format.json { render json: @programs.to_json(:include=>:presenters) }
+      format.json { render json: @programs.to_json(:include=>:broadcasters) }
     end
   end
 
   def show
-    @program = Program.includes(:presenters).find(params[:id])
+    @program = Program.includes(:broadcasters).find(params[:id])
     @canedit	=	@current_user.programs.include?(@program)
 
     respond_to do |format|

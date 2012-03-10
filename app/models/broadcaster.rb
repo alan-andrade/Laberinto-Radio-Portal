@@ -1,4 +1,4 @@
-class Presenter < ActiveRecord::Base
+class Broadcaster < User
 	acts_as_authentic
 	has_attached_file	:avatar,
 										styles: {:small =>	"80x80#"}

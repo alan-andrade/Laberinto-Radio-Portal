@@ -9,10 +9,10 @@
 				
 		
 		=image_tag @program.logo.url(:large), class: :program_logo
-		- for presenter in @program.presenters
+		- for broadcaster in @program.broadcasters
 			.image-with-border
-				=image_tag presenter.avatar.url(:small)
-				%p=link_to presenter.name.split[0..1].join(" "), presenter
+				=image_tag broadcaster.avatar.url(:small)
+				%p=link_to broadcaster.name.split[0..1].join(" "), broadcaster
 		.clear
 		%p.description=@program.description
 		%h2 Emisiones Anteriores

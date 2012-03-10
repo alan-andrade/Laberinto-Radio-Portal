@@ -1,11 +1,10 @@
 class Program < ActiveRecord::Base
-	has_attached_file	:logo,
-										styles: {:small =>	"80x80#",:large	=> ">240x240"}
+	has_attached_file	:logo, styles: {:small =>	"80x80#",:large	=> ">240x240"}
 	
 	has_many	:schedules,	:dependent	=>	:destroy
 	has_many	:days,				through: :schedules 
 	has_many	:ownerships
-	has_many	:presenters,	through: :ownerships , autosave: true, uniq: true
+	has_many	:broadcasters,	through: :ownerships , autosave: true, uniq: true
 	has_many	:requests
 	
 	def form_schedules=(f_schedules)
