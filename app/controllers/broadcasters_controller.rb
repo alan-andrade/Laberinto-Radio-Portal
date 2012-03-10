@@ -1,10 +1,10 @@
 # encoding: utf-8
-class PresentersController < ApplicationController
+class BroadcastersController < UsersController
 	before_filter :require_user
 	before_filter	:need_admin, :only	=> [:new,:destroy]
 
   def index
-    @presenters = Presenter.all
+    @presenters = Broadcaster.all
 
     respond_to do |format|
       format.html # index.html.erb
@@ -13,7 +13,7 @@ class PresentersController < ApplicationController
   end
 
   def show
-    @presenter = Presenter.find(params[:id])
+    @presenter = Broadcaster.find(params[:id])
 
     respond_to do |format|
       format.html # show.html.erb
@@ -22,7 +22,7 @@ class PresentersController < ApplicationController
   end
 
   def new
-    @presenter = Presenter.new
+    @presenter = Broadcaster.new
 
     respond_to do |format|
       format.html # new.html.erb
@@ -31,11 +31,11 @@ class PresentersController < ApplicationController
   end
 
   def edit
-    @presenter = @current_user.admin? ? Presenter.find(params[:id]) : @current_user
+    @presenter = @current_user.admin? ? Broadcaster.find(params[:id]) : @current_user
   end
 
   def create
-    @presenter = Presenter.new(params[:presenter])
+    @presenter = Broadcaster.new(params[:presenter])
 
     respond_to do |format|
       if @presenter.save
@@ -52,7 +52,7 @@ class PresentersController < ApplicationController
   # PUT /presenters/1
   # PUT /presenters/1.json
   def update
-    @presenter = Presenter.find(params[:id])
+    @presenter = Broadcaster.find(params[:id])
 
     respond_to do |format|
       if @presenter.update_attributes(params[:presenter])
@@ -66,7 +66,7 @@ class PresentersController < ApplicationController
   end
 
   def destroy
-    @presenter = Presenter.find(params[:id])
+    @presenter = Broadcaster.find(params[:id])
     @presenter.destroy
 
     respond_to do |format|
