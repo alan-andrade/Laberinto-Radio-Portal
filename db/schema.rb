@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120310092011) do
+ActiveRecord::Schema.define(:version => 20120311013551) do
 
   create_table "days", :force => true do |t|
     t.string "day", :null => false
@@ -34,18 +34,6 @@ ActiveRecord::Schema.define(:version => 20120310092011) do
     t.integer  "logo_content_type"
     t.integer  "logo_file_size"
   end
-
-  create_table "requests", :force => true do |t|
-    t.integer  "requester_id", :null => false
-    t.integer  "presenter_id", :null => false
-    t.integer  "program_id",   :null => false
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  add_index "requests", ["presenter_id"], :name => "index_requests_on_presenter_id"
-  add_index "requests", ["program_id"], :name => "index_requests_on_program_id"
-  add_index "requests", ["requester_id"], :name => "index_requests_on_requester_id"
 
   create_table "schedules", :force => true do |t|
     t.integer "program_id", :null => false

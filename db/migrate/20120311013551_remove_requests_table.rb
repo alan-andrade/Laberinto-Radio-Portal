@@ -5,10 +5,11 @@ class RemoveRequestsTable < ActiveRecord::Migration
 
   def down
   	create_table :requests do |t|
-      t.references :requester	,	null: false
-      t.references :presenter	,	null: false
-      t.references :program		,	null: false
+    	t.references :requester	,	null: false
+    	t.references :presenter	,	null: false
+    	t.references :program		,	null: false
 
-      t.timestamps
+    	t.timestamps
+  	end
   end
 end
