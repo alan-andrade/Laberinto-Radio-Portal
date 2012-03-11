@@ -11,15 +11,16 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120311013551) do
+ActiveRecord::Schema.define(:version => 20120311064328) do
 
   create_table "days", :force => true do |t|
     t.string "day", :null => false
   end
 
   create_table "ownerships", :force => true do |t|
-    t.integer "broadcaster_id", :null => false
-    t.integer "program_id",     :null => false
+    t.integer "broadcaster_id",                    :null => false
+    t.integer "program_id",                        :null => false
+    t.boolean "admin",          :default => false
   end
 
   add_index "ownerships", ["broadcaster_id"], :name => "index_ownerships_on_presenter_id"

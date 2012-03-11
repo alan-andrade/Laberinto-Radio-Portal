@@ -2,10 +2,12 @@ class Program < ActiveRecord::Base
 	has_attached_file	:logo, styles: {:small =>	"80x80#",:large	=> ">240x240"}
 	
 	has_many	:schedules,	:dependent	=>	:destroy
-	has_many	:days,				through: :schedules 
-	has_many	:ownerships
+	has_many	:days,				through: :schedules
+	has_many	:ownerships,	autosave: true
 	has_many	:broadcasters,	through: :ownerships , autosave: true, uniq: true
-	has_many	:requests
+	#has_one		:admin,	class_name: "Broadcaster", conditions: {ownerships: {admin: true}}
+
+	after_save :set_admin
 	
 	def form_schedules=(f_schedules)
 		selected_days		= f_schedules[:day_ids].map{|day| day.first.to_i}
@@ -22,4 +24,9 @@ class Program < ActiveRecord::Base
 						
 	end	
 	def form_schedules;end
+
+	private
+	def set_admin
+		ownerships.first.update_attribute(:admin,true) if broadcasters.length == 1
+	end
 end

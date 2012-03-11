@@ -1,14 +1,15 @@
 require 'factory_girl'
 
 FactoryGirl.define do
-	factory :presenter do
-		name 'I am the administrator'
-		email 'admin@laberintoradio.net'
-		password 'imadmin'
-		password_confirmation 'imadmin'
+	factory :broadcaster do
+		name 'Super broadcaster'
+		email 'broadcaster@laberintoradio.net'
+		password 'imthebroadcaster'
+		password_confirmation 'imthebroadcaster'
 	end
-	
-	factory :admin, :parent => :presenter do
-		admin true
+	factory :program do
+		name 'My super program'
+		start_time DateTime.now
+		end_time DateTime.now + 1.hour
 	end
 end

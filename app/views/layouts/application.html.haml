@@ -17,4 +17,5 @@
 					%ul#user-nav
 						%li= link_to 'Perfil', @current_user
 						%li= link_to 'Salir', logout_url
+				%p= flash[:notice]
 		= yield
