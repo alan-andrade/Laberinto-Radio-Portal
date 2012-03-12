@@ -7,6 +7,8 @@ class Program < ActiveRecord::Base
 	has_many	:broadcasters,	through: :ownerships , autosave: true, uniq: true
 	#has_one		:admin,	class_name: "Broadcaster", conditions: {ownerships: {admin: true}}
 
+	validates_uniqueness_of :name
+
 	after_save :set_admin
 	
 	def form_schedules=(f_schedules)
