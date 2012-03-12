@@ -34,7 +34,6 @@ class ProgramsController < ApplicationController
     end
   end
 
-  # GET /programs/1/edit
   def edit
     @program 	= @current_user.admin_programs.includes(:schedules).find(params[:id])
     @days			=	Day.all
@@ -54,8 +53,6 @@ class ProgramsController < ApplicationController
     end
   end
 
-  # PUT /programs/1
-  # PUT /programs/1.json
   def update
     @program = @current_user.admin_programs.find(params[:id])
 
@@ -70,8 +67,6 @@ class ProgramsController < ApplicationController
     end
   end
 
-  # DELETE /programs/1
-  # DELETE /programs/1.json
   def destroy
     @program = @current_user.admin_programs.find(params[:id])
     @program.destroy
@@ -82,8 +77,23 @@ class ProgramsController < ApplicationController
     end
   end
 
+  def join
+    @program = Program.find(params[:program_id])
+    @program.broadcasters << @current_user
+    if @program.save
+      redirect_to @program, notice: "Ya eres locutor de #{@program.name}"
+    else
+      redirect_to @program, notice: "Algo anda mal. No puedes ser parte del programa."
+    end
+  end
+
   private
+
   def require_admin_broadcaster
-    redirect_to programs_url, notice: "No eres administrador de este programa." unless @current_user.admin_program_ids.include?(params[:id])
+    p @current_user.admin_program_ids
+    p params[:id]
+    unless @current_user.admin_program_ids.include?(params[:id].to_i)
+      redirect_to programs_url, notice: "No eres administrador de este programa."
+    end
   end
 end

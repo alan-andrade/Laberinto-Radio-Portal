@@ -11,9 +11,7 @@ PortalDeLocutores::Application.routes.draw do
 	end
 
 	resources :programs do
-		resources	:requests,	:only=>[:create,:destroy] do
-			match	'approve', :action=>'approve'
-		end
+		post 'join', :action=>'join'
 	end
 	
 end

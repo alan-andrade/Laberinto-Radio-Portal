@@ -3,7 +3,7 @@ class Broadcaster < User
 	has_attached_file	:avatar, styles: {:small =>	"80x80#"}
 										
 	has_many	:ownerships	
-	has_many	:programs,	through: :ownerships
+	has_many	:programs,	through: :ownerships, uniq: true
 	has_many 	:admin_ownerships,	class_name: "Ownership", conditions: {admin: true}
 	has_many	:admin_programs, through: :admin_ownerships, source: :program
 

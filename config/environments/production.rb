@@ -49,10 +49,10 @@ PortalDeLocutores::Application.configure do
   # config.action_mailer.raise_delivery_errors = false
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.smtp_settings = {
-    :address              => "laberintoradio.net",
-    :port                 => 25,
+    :address              => "smtp.laberintoradio.net",
+    :port                 => 587,
     :domain               => 'laberintoradio.net',
-    :user_name            => 'appmailer',
+    :user_name            => 'officeboy',
     :password             => 'laberintoM@iler',
     :authentication       => 'plain',
     :enable_starttls_auto => true  }
